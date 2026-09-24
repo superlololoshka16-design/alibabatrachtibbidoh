@@ -27,5 +27,27 @@ lto = "thin"
 panic = "abort"
 codegen-units = 1
 
+autotests = false
+
+[[test]]
+name = "ast_bundles"
+path = "tests/ast_bundles.rs"
+
+[[test]]
+name = "feilin_live"
+path = "tests/feilin_live.rs"
+
+[[test]]
+name = "golden"
+path = "tests/golden.rs"
+
+[[test]]
+name = "golden_verify"
+path = "tests/golden_verify.rs"
+
+[[test]]
+name = "realtime_live_net"
+path = "tests/realtime/live_net.rs"
+
 [profile.test]
 opt-level = 1
