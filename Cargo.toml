@@ -1,4 +1,5 @@
 [package]
+autotests = false
 name = "zaic"
 version = "2.3.0"
 edition = "2021"
@@ -27,7 +28,6 @@ lto = "thin"
 panic = "abort"
 codegen-units = 1
 
-autotests = false
 
 [[test]]
 name = "ast_bundles"
@@ -46,8 +46,29 @@ name = "golden_verify"
 path = "tests/golden_verify.rs"
 
 [[test]]
-name = "realtime_live_net"
-path = "realtime/live_net.rs"
+name = "live_net"
+path = "tests/live_net.rs"
+
+
+[[test]]
+name = "unit_gen"
+path = "tests/unit_gen.rs"
+
+[[test]]
+name = "unit_feilin"
+path = "tests/unit_feilin.rs"
+
+[[test]]
+name = "unit_inpaint"
+path = "tests/unit_inpaint.rs"
+
+[[test]]
+name = "unit_profile"
+path = "tests/unit_profile.rs"
+
+[[test]]
+name = "unit_ycipher"
+path = "tests/unit_ycipher.rs"
 
 [profile.test]
 opt-level = 1
