@@ -1,0 +1,31 @@
+[package]
+name = "zaic"
+version = "2.3.0"
+edition = "2021"
+rust-version = "1.98"
+description = "chat.z.ai/auth captcha challenger — pure Rust: oxc AST analysis, aws-lc-rs crypto, BoringSSL network engine"
+
+[[bin]]
+name = "zaic"
+path = "src/main.rs"
+
+[dependencies]
+aws-lc-rs = "1.18"
+md-5 = "0.10"
+oxc = { version = "0.150", features = ["semantic", "codegen", "ast_visit"] }
+wreq = "0.16"
+wreq-util = "0.2"
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "time"] }
+uuid = { version = "1", features = ["v4"] }
+flate2 = { version = "=1.1.9", default-features = false, features = ["rust_backend"] }
+png = "0.18"
+egg = "0.11.0"
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+panic = "abort"
+codegen-units = 1
+
+[profile.test]
+opt-level = 1
