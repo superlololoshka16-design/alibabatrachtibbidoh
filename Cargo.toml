@@ -47,7 +47,7 @@ path = "tests/golden_verify.rs"
 
 [[test]]
 name = "realtime_live_net"
-path = "tests/realtime/live_net.rs"
+path = "realtime/live_net.rs"
 
 [profile.test]
 opt-level = 1
